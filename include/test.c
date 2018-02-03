@@ -7,3 +7,9 @@
 int test(int d){
   return 2*d;
 }
+
+int main()
+{
+printf("coucou");
+return 1;
+}

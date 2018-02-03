@@ -1,7 +1,7 @@
 #! /bin/bash
 echo "**** Starting ****"
 echo "Building project"
-        gcc main.c -o main
+        make all
 echo "launching project"
         ./main
 echo "**** End ****"
