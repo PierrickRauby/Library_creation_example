@@ -1,25 +1,12 @@
-main : main.o
-	gcc main.o -o main
-	@echo 'creating main from .o files'
+Programme : main.o test.o
+	gcc main.o test.o -o Programme
 
-main.o = main.c
+main.o : main.c test.c
 	gcc -c main.c -o main.o
-	@echo 'creating main from .o files'
 
+test.o : test.c
+	gcc -c test.c -o test.o
 
-
-
-# .PHONY : all
-#
-# CC=gcc
-#
-# all : %.o
-# 	$(CC) $^ -o $@
-# 	@echo 'creating main from .o files'
-#
-# %.o: %.c
-# 	$(CC) -c $< -o $@
-# 	@echo 'creating main from .o files'
-#
-# clean:
-# 	rm -rf main
+clean :
+	rm Programme
+	rm *.o
