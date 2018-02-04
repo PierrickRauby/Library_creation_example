@@ -6,13 +6,13 @@
 #include <stdio.h>
 //#include <test.h>
 
-int d;
+//int d;
 
 int main()
 {
 //d= test(4);
 
-printf("d vaut %i\n", d);
+printf("d vaut \n");
 
 return 0;
 }
