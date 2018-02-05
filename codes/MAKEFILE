@@ -1,11 +1,8 @@
-Programme : main.o test.o
-	gcc main.o test.o -o Programme
+Programme : main.o libtest.a
+	gcc main.o libtest.a -o Programme
 
-main.o : main.c test.c
+main.o : main.c test.h
 	gcc -c main.c -o main.o
-
-test.o : test.c
-	gcc -c test.c -o test.o
 
 clean :
 	rm Programme
