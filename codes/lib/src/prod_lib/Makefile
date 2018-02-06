@@ -18,19 +18,20 @@ INCLUDE=-I=../../include # the include_path maybe needed for the headers
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	@echo '––––––––––––––––––––––––––'
+	@echo '–––––––––––––––––––––––––––'
 	@echo '*** Building $(patsubst ../../%,%, $@) ***'
-	@echo '––––––––––––––––––––––––––'
-	@echo 'compilling library $(patsubst ../../%,%, $@) from .o files'
-	@ar -q $(TARGET) $^
+	@echo '–––––––––––––––––––––––––––'
+	@echo 'compilling library $(patsubst ../../%, %, $@) from .o files'
+	@ar -q  $(TARGET) $^ #-o $(TARGET)
 
 
 #Creating the OBJECTS from C files
 $(GEN_DIR)/%.o : $(SOURCES)
 	@mkdir -p $(GEN_DIR)
+
 	@$(CC) -c  $< $(INCLUDE) -o $@
-#@echo 'La destination vaut $@'
-#@echo 'FINAL_DIR vaut  $(FINAL_DIR)'
+# @echo 'La destination vaut $@'
+# @echo 'FINAL_DIR vaut  $(FINAL_DIR)'
 
 clean:
 	rm -rf $(GEN_DIR)

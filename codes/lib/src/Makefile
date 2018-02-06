@@ -1,11 +1,13 @@
-SUBDIRS= add_lib prod_dir
-
+SUBDIRS=prod_lib add_lib
 
 all: $(SUBDIRS)
 
 $(SUBDIRS):
-	@echo 'invoking Makefiles for all SUBDIRS'
+
 	@$(MAKE) -C $@
 
 clean:
+
 	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
+
+.PHONY: all clean $(SUBDIRS)
