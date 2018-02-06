@@ -4,15 +4,15 @@
 #include <string.h>
 #include <stdint.h>
 #include <stdio.h>
-//#include <test.h>
+#include "test.h"
 
 int d;
 
 int main()
 {
-//d= test(4);
+d= Test(4);
 
-printf("d vaut %i\n", d);
+printf("d vallait 4 et maintenant d vaut %i\n",d );
 
 return 0;
 }
