@@ -1,4 +1,4 @@
-SUBDIRS=prod_lib add_lib
+SUBDIRS=prodlib addlib
 
 all: $(SUBDIRS)
 

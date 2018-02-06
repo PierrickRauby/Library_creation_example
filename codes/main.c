@@ -4,15 +4,19 @@
 #include <string.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "test.h"
+#include <libadd.h>
+#include <libprod.h>
 
-int d;
+int d=4;
 
 int main()
 {
-d= Test(4);
 
-printf("d vallait 4 et maintenant d vaut %i\n",d );
+
+printf("Adding to d gives  %i\n",addition(d) );
+printf("Substraction to d gives %i\n", substraction(d) );
+printf("Multiplying d gives %i\n",multiplication(d) );
+printf("Dividing d gives %i\n",division(d) );
 
 return 0;
 }
