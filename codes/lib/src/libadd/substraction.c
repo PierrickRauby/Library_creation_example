@@ -3,16 +3,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "test.h"
 
-int Test(int d){
-  return 2*d;
+int substraction(int d){
+  return d-2;
 }
-
-/*
-int main()
-{
-printf("coucou");
-return 1;
-}
-*/

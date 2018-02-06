@@ -1,0 +1,21 @@
+.PHONY: all clean
+
+#Defining variables
+CC=gcc
+EXITNAME= Programme
+
+
+
+all : main.o Test.o
+	$(CC) $^ -o $(EXITNAME)
+	@echo 'creating main from .o files'
+
+main.c: test.h
+
+%.o : %.c
+	$(CC) -c $< -o $@
+	@echo 'creating main from .o files'
+
+clean :
+	rm $(EXITNAME)
+	rm *.o
