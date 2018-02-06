@@ -2,8 +2,8 @@ CC=gcc
 MKFILE_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
 CURRENT_DIR := $(notdir $(patsubst %/,%,$(dir $(MKFILE_PATH))))
 PROJ_NAME=$(CURRENT_DIR)
-INCLUDE_PATH=-I../codes/include
-LIB_PATH=-L../codes/lib
+INCLUDE_PATH=-I./include
+LIB_PATH=-L./lib
 SOURCES=$(wildcard *.c)
 #TARGET= $(patsubst $(CURRENT_DIR)%,../../$(PROJ_NAME).a%,$(CURRENT_DIR))
 TARGET= $(GEN_DIR)/$(PROJ_NAME)
@@ -18,7 +18,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	@echo 'linking $(patsubst ../../%,%, $@) from .o files'
-	$(CC) $(LIB_PATH) -l libadd -l libprod $^ -o $(TARGET)
+	$(CC) -v $^ -o $(TARGET) $(LIB_PATH) -ladd -lprod
 
 
 #Creating the OBJECTS from C files

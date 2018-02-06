@@ -22,7 +22,7 @@ $(TARGET): $(OBJECTS)
 	@echo '*** Building $(patsubst ../../%,%, $@) ***'
 	@echo '–––––––––––––––––––––––––––'
 	@echo 'compilling library $(patsubst ../../%, %, $@) from .o files'
-	@ar -q  $(TARGET) $^ #-o $(TARGET)
+	@ar -rcs  $(TARGET) $^ #-o $(TARGET)
 
 
 #Creating the OBJECTS from C files
