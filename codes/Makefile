@@ -18,7 +18,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	@echo 'linking $(patsubst ../../%,%, $@) from .o files'
-	$(CC) $(LIB_PATH) add_lib.a prod_lib.a $^ -o $(TARGET)
+	$(CC) $(LIB_PATH) -l libadd -l libprod $^ -o $(TARGET)
 
 
 #Creating the OBJECTS from C files

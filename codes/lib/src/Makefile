@@ -1,4 +1,4 @@
-SUBDIRS=prodlib addlib
+SUBDIRS=libprod libadd
 
 all: $(SUBDIRS)
 
