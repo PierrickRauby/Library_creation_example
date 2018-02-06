@@ -26,7 +26,7 @@ $(TARGET): $(OBJECTS)
 
 
 #Creating the OBJECTS from C files
-$(GEN_DIR)/%.o : $(SOURCES)
+$(GEN_DIR)/%.o : %.c
 	@mkdir -p $(GEN_DIR)
 
 	@$(CC) -c  $< $(INCLUDE) -o $@

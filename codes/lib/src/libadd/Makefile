@@ -21,12 +21,12 @@ $(TARGET): $(OBJECTS)
 	@echo '––––––––––––––––––––––––––'
 	@echo '*** Building $(patsubst ../../%,%, $@) ***'
 	@echo '––––––––––––––––––––––––––'
-	@echo 'compilling library $(patsubst ../../%,%, $@) from .o files'
+	@echo 'compilling library $(patsubst ../../%,%, $@) from .o files: $^'
 	@ar -q $(TARGET) $^
 
 
 #Creating the OBJECTS from C files
-$(GEN_DIR)/%.o : $(SOURCES)
+$(GEN_DIR)/%.o : %.c
 	@mkdir -p $(GEN_DIR)
 	@$(CC) -c  $< $(INCLUDE) -o $@
 #@echo 'La destination vaut $@'
